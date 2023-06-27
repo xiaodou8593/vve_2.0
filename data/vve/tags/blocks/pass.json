@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:air",
+    "minecraft:cave_air",
+    "minecraft:void_air",
+    "minecraft:water",
+    "minecraft:grass",
+    "minecraft:lever",
+    "minecraft:seagrass",
+    "minecraft:tall_seagrass",
+    "minecraft:sea_pickle",
+    "minecraft:warped_fungus",
+    "minecraft:crimson_fungus",
+    "minecraft:crimson_roots",
+    "minecraft:weeping_vines_plant",
+    "minecraft:weeping_vines",
+    "#replaceable_plants",
+    "#minecraft:trapdoors",
+    "#minecraft:flowers",
+    "#minecraft:rails"
+  ]
+}

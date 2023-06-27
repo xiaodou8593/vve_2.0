@@ -1,0 +1,13 @@
+tellraw @a {"text":"---"}
+
+tellraw @a [{"text":"xyzw:["},{"score":{"name":"qrot_x","objective":"int"}},{"text":","},{"score":{"name":"qrot_y","objective":"int"}},{"text":","},{"score":{"name":"qrot_z","objective":"int"}},{"text":","},{"score":{"name":"qrot_w","objective":"int"}},{"text":"]"}]
+
+tellraw @a [{"text":"u:["},{"score":{"name":"u0","objective":"int"}},{"text":","},{"score":{"name":"u1","objective":"int"}},{"text":","},{"score":{"name":"u2","objective":"int"}},{"text":"]"}]
+tellraw @a [{"text":"v:["},{"score":{"name":"v0","objective":"int"}},{"text":","},{"score":{"name":"v1","objective":"int"}},{"text":","},{"score":{"name":"v2","objective":"int"}},{"text":"]"}]
+tellraw @a [{"text":"w:["},{"score":{"name":"w0","objective":"int"}},{"text":","},{"score":{"name":"w1","objective":"int"}},{"text":","},{"score":{"name":"w2","objective":"int"}},{"text":"]"}]
+
+tellraw @a {"score":{"name":"tempc0","objective":"int"}}
+
+tellraw @a [{"text":"xyz:["},{"score":{"name":"@s","objective":"x"}},{"text":","},{"score":{"name":"@s","objective":"y"}},{"text":","},{"score":{"name":"@s","objective":"z"}},{"text":"]"}]
+
+tellraw @a [{"text":"["},{"score":{"name":"sstempx","objective":"int"}},{"text":","},{"score":{"name":"sstempy","objective":"int"}},{"text":","},{"score":{"name":"sstempz","objective":"int"}},{"text":"]"}]

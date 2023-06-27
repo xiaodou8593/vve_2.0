@@ -1,0 +1,77 @@
+#vve_obj数据模板
+{
+	mass:5,
+	mass_center:[0.0d,0.0d,0.0d],
+	rmass:0.0d,
+	gravity:3.0d,
+	bounce:0.8d,
+	friction:[0.0f,0.0f],
+	pos:[0.0d,0.0d,0.0d],
+	xyzw:[0.0f,0.0f,0.0f,0.0f],
+	uvw:[0.0d,0.0d,0.0d],
+	rel_xyzw:[0.0f,0.0f,0.0f,0.0f],
+	omega:[0.0f,0.0f,0.0f],
+	sub_cubes:[],
+	sub_objs:[],
+	tags:["string"]
+}
+
+#vve_cube数据模板
+{
+	mass:5,
+	mass_center:[0.0d,0.0d,0.0d],
+	rmass:0.0d,
+	pos:[0.0d,0.0d,0.0d],
+	xyzw:[0.0f,0.0f,0.0f,0.0f],
+	uvw:[0.0d,0.0d,0.0d],
+	rel_xyzw:[0.0f,0.0f,0.0f,0.0f],
+	item:{id:"minecraft:command_block",Count:1b},
+	collision_points:[[0.0d,0.0d,0.0d],[0.0d,1.0d,0.0d]],
+	tags:["string"]
+}
+
+#vve_impulse数据模板
+{
+	not_rot:0b,
+	pos:[0.0d,0.0d,0.0d],
+	fvec:[0.0d,0.0d,0.0d],
+	set_v:[0.0d,0.0d,0.0d],
+	set_omega:[0.0f,0.0f,0.0f]
+}
+
+#test_cube
+data mofify storage math:io temp set value {id:"test_cube",item:{id:"minecraft:command_block",Count:1b}}
+
+#red_cube
+data modify storage math:io temp set value {id:"red_cube",item:{id:"minecraft:red_wool",Count:1b}}
+
+#green_cube
+data modify storage math:io temp set value {id:"green_cube",item:{id:"minecraft:green_wool",Count:1b}}
+
+#blue_cube
+data modify storage math:io temp set value {id:"blue_cube",item:{id:"minecraft:blue_wool",Count:1b}}
+
+#test_obj
+data modify storage math:io temp set value {id:"test_obj",sub_cubes:[],sub_objs:[]}
+
+data modify storage math:io stemp set from storage math:class vve_cubes[{id:"red_wool"}]
+data modify storage math:io stemp.uvw set value [1.0d,0.0d,0.0d]
+data modify storage math:io temp.sub_cubes append from storage math:io stemp
+
+data modify storage math:io stemp set from storage math:class vve_cubes[{id:"green_wool"}]
+data modify storage math:io stemp.uvw set value [0.0d,1.0d,0.0d]
+data modify storage math:io stemp.rel_xyzw set value [0.7071f,0.0f,0.0f,0.7071f]
+data modify storage math:io temp.sub_cubes append from storage math:io stemp
+
+data modify storage math:io stemp set from storage math:class vve_cubes[{id:"blue_wool"}]
+data modify storage math:io stemp.uvw set value [0.0d,0.0d,1.0d]
+data modify storage math:io temp.sub_cubes append from storage math:io stemp
+
+data modify storage math:io stemp set from storage math:io temp
+data modify storage math:io stemp.uvw set value [0.0d,1.0d,2.0d]
+data modify storage math:io stemp.rel_xyzw set value [0.7071f,0.0f,0.0f,0.7071f]
+data modify storage math:io temp.sub_objs append from storage math:io stemp
+
+data modify storage math:io stemp.uvw set value [0.0d,1.0d,-2.0d]
+data modify storage math:io stemp.rel_xyzw set value [-0.7071f,0.0f,0.0f,0.7071f]
+data modify storage math:io temp.sub_objs append from storage math:io stemp
