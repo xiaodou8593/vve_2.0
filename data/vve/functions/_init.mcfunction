@@ -19,10 +19,14 @@ scoreboard objectives add vve_mcw dummy
 scoreboard objectives add vve_friction dummy
 scoreboard objectives add vve_friction_r dummy
 scoreboard objectives add vve_bounce dummy
+scoreboard objectives add vve_surface dummy
+scoreboard objectives add vve_surface_f dummy
+scoreboard objectives add vve_surface_fr dummy
 
 #常量设置
 scoreboard players set vve_simrate int 3
-scoreboard players set vve_v0 int 500
+scoreboard players set vve_v0 int 250
+scoreboard players set vve_rf int -2250
 
 #临时对象
 data modify storage math:io fvec_xyz set value [0.0d,0.0d,0.0d]
@@ -33,3 +37,6 @@ data modify storage math:io vve_impulse set value {not_rot:0b,pos:[0.0d,0.0d,0.0
 #数据模板
 data modify storage math:class vve_tags set value {obj:["vve_obj","vve_node","result"]}
 data modify storage math:class vve_cubecps set value [[0.5d,0.5d,0.5d],[0.5d,0.5d,-0.5d],[0.5d,-0.5d,0.5d],[0.5d,-0.5d,-0.5d],[-0.5d,0.5d,0.5d],[-0.5d,0.5d,-0.5d],[-0.5d,-0.5d,0.5d],[-0.5d,-0.5d,-0.5d]]
+
+#爆炸发生器初始化
+function vve:exploder/init

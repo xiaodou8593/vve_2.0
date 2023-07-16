@@ -1,42 +1,14 @@
 #vve:physx/surface_vec
-execute store result score 3vec_x int run data get storage math:io stemp[0].xyz[0] 10000
-execute store result score 3vec_y int run data get storage math:io stemp[0].xyz[1] 10000
-execute store result score 3vec_z int run data get storage math:io stemp[0].xyz[2] 10000
-execute store result entity @s Pos[0] double 0.0001 run scoreboard players operation 3vec_x int -= stempu0 int
-execute store result entity @s Pos[1] double 0.0001 run scoreboard players operation 3vec_y int -= stempv0 int
-execute store result entity @s Pos[2] double 0.0001 run scoreboard players operation 3vec_z int -= stempw0 int
+execute store result score stempu3 int run data get storage math:io stemp[0].xyz[0] 10000
+execute store result score stempv3 int run data get storage math:io stemp[0].xyz[1] 10000
+execute store result score stempw3 int run data get storage math:io stemp[0].xyz[2] 10000
+execute store result entity @s Pos[0] double 0.0001 run scoreboard players operation stempu3 int -= stempu0 int
+execute store result entity @s Pos[1] double 0.0001 run scoreboard players operation stempv3 int -= stempv0 int
+execute store result entity @s Pos[2] double 0.0001 run scoreboard players operation stempw3 int -= stempw0 int
 execute positioned 0.0 0.0 0.0 facing entity @s feet run tp @s ^ ^ ^1.0
-execute store result score 3vec_x int run data get entity @s Pos[0] 10000
-execute store result score 3vec_y int run data get entity @s Pos[1] 10000
-execute store result score 3vec_z int run data get entity @s Pos[2] 10000
-
-scoreboard players operation stempu3 int = u0 int
-scoreboard players operation stempu3 int *= 3vec_x int
-scoreboard players operation sstemp0 int = u1 int
-scoreboard players operation sstemp0 int *= 3vec_y int
-scoreboard players operation stempu3 int += sstemp0 int
-scoreboard players operation sstemp0 int = u2 int
-scoreboard players operation sstemp0 int *= 3vec_z int
-scoreboard players operation stempu3 int += sstemp0 int
-scoreboard players operation stempu3 int /= 10000 int
-scoreboard players operation stempv3 int = v0 int
-scoreboard players operation stempv3 int *= 3vec_x int
-scoreboard players operation sstemp0 int = v1 int
-scoreboard players operation sstemp0 int *= 3vec_y int
-scoreboard players operation stempv3 int += sstemp0 int
-scoreboard players operation sstemp0 int = v2 int
-scoreboard players operation sstemp0 int *= 3vec_z int
-scoreboard players operation stempv3 int += sstemp0 int
-scoreboard players operation stempv3 int /= 10000 int
-scoreboard players operation stempw3 int = w0 int
-scoreboard players operation stempw3 int *= 3vec_x int
-scoreboard players operation sstemp0 int = w1 int
-scoreboard players operation sstemp0 int *= 3vec_y int
-scoreboard players operation stempw3 int += sstemp0 int
-scoreboard players operation sstemp0 int = w2 int
-scoreboard players operation sstemp0 int *= 3vec_z int
-scoreboard players operation stempw3 int += sstemp0 int
-scoreboard players operation stempw3 int /= 10000 int
+execute store result score stempu3 int run data get entity @s Pos[0] 10000
+execute store result score stempv3 int run data get entity @s Pos[1] 10000
+execute store result score stempw3 int run data get entity @s Pos[2] 10000
 
 scoreboard players operation sstemp0 int = stempu3 int
 scoreboard players operation sstemp0 int *= stempu1 int

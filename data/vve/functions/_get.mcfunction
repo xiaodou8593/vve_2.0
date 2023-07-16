@@ -16,3 +16,6 @@ scoreboard players operation vve_mcw int = @s vve_mcw
 scoreboard players operation vve_friction int = @s vve_friction
 scoreboard players operation vve_friction_r int = @s vve_friction_r
 scoreboard players operation vve_bounce int = @s vve_bounce
+scoreboard players operation vve_surface int = @s vve_surface
+scoreboard players operation vve_surface_f int = @s vve_surface_f
+scoreboard players operation vve_surface_fr int = @s vve_surface_fr

@@ -21,8 +21,8 @@ scoreboard players operation sstempv int += sstempz1 int
 scoreboard players operation sstempv int /= 10000 int
 
 #投影
-scoreboard players operation sstempu int *= stempk0 int
-scoreboard players operation sstempv int *= stempk1 int
+scoreboard players operation sstempu int *= sstempk0 int
+scoreboard players operation sstempv int *= sstempk1 int
 scoreboard players operation sstempu int += sstempv int
 scoreboard players operation sstempu int /= 10000 int
 scoreboard players operation stempd int > sstempu int

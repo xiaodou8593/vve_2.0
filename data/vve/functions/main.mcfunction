@@ -21,7 +21,7 @@ scoreboard players operation vve_mcz int = 3vec_z int
 
 #微刻模拟
 #data modify storage math:io self_uuid set from entity @s UUID
-execute positioned 0.0 0.0 0.0 as @e[tag=math_marker,limit=1] run function vve:simtick
+execute positioned 0.0 0.0 0.0 as 0-0-0-8593-0 run function vve:simtick
 tag @e[distance=..16] remove tmp
 
 #数据储存化

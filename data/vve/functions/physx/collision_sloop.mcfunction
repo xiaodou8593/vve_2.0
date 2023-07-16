@@ -1,11 +1,14 @@
 #vve:physx/collision_sloop
 #add_pos
 execute store result score sstemp0 int run data get storage math:io classify[-1][-1].pos[0] 10000
-scoreboard players operation sstempx int += sstemp0 int
+scoreboard players operation sstemp0 int -= sstempx int
+scoreboard players operation sstempdx int += sstemp0 int
 execute store result score sstemp0 int run data get storage math:io classify[-1][-1].pos[1] 10000
-scoreboard players operation sstempy int += sstemp0 int
+scoreboard players operation sstemp0 int -= sstempy int
+scoreboard players operation sstempdy int += sstemp0 int
 execute store result score sstemp0 int run data get storage math:io classify[-1][-1].pos[2] 10000
-scoreboard players operation sstempz int += sstemp0 int
+scoreboard players operation sstemp0 int -= sstempz int
+scoreboard players operation sstempdz int += sstemp0 int
 #add_fvec
 execute store result score sstemp0 int run data get storage math:io classify[-1][-1].fvec[0] 10000
 scoreboard players operation fvec_x int += sstemp0 int

@@ -7,3 +7,6 @@ scoreboard players operation @s vve_vz = vve_vz int
 scoreboard players operation @s vve_omegax = vve_omegax int
 scoreboard players operation @s vve_omegay = vve_omegay int
 scoreboard players operation @s vve_omegaz = vve_omegaz int
+scoreboard players operation @s vve_surface = vve_surface int
+scoreboard players operation @s vve_surface_f = vve_surface_f int
+scoreboard players operation @s vve_surface_fr = vve_surface_fr int

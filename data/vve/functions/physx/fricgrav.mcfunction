@@ -1,5 +1,7 @@
 #vve:physx/fricgrav
 
+execute if score vve_surface int matches 1 run function vve:physx/fric_replace
+
 scoreboard players operation vve_vy int -= vve_g int
 
 scoreboard players set stemp_sign int 1

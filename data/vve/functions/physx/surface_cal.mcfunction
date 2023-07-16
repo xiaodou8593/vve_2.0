@@ -1,19 +1,32 @@
 #vve:physx/surface_cal
+
 #着陆平面参数
-scoreboard players set fvec_x int 0
-scoreboard players set fvec_y int 0
-scoreboard players set fvec_z int 0
-scoreboard players set stempx int 0
-scoreboard players set stempy int 0
-scoreboard players set stempz int 0
+execute store result score vve_surface_f int run data get storage math:io stemp[0].friction[0] 10000
+execute store result score vve_surface_fr int run data get storage math:io stemp[0].friction[1] 10000
+execute store result score fvec_x int run data get storage math:io stemp[0].fvec[0] 10000
+execute store result score fvec_y int run data get storage math:io stemp[0].fvec[1] 10000
+execute store result score fvec_z int run data get storage math:io stemp[0].fvec[2] 10000
+execute store result score stempx int run data get storage math:io stemp[0].pos[0] 10000
+execute store result score stempy int run data get storage math:io stemp[0].pos[1] 10000
+execute store result score stempz int run data get storage math:io stemp[0].pos[2] 10000
+scoreboard players set stempdx int 0
+scoreboard players set stempdy int 0
+scoreboard players set stempdz int 0
+data modify storage math:io stemp append from storage math:io stemp[0]
+data remove storage math:io stemp[0]
 scoreboard players operation sloop int = stemp_cnt int
-function vve:physx/surface_sloop
+execute if score sloop int matches 2.. run function vve:physx/surface_sloop
 execute store result entity @s Pos[0] double 0.0001 run scoreboard players operation fvec_x int /= stemp_cnt int
 execute store result entity @s Pos[1] double 0.0001 run scoreboard players operation fvec_y int /= stemp_cnt int
 execute store result entity @s Pos[2] double 0.0001 run scoreboard players operation fvec_z int /= stemp_cnt int
-scoreboard players operation stempx int /= stemp_cnt int
-scoreboard players operation stempy int /= stemp_cnt int
-scoreboard players operation stempz int /= stemp_cnt int
+scoreboard players operation stempdx int /= stemp_cnt int
+scoreboard players operation stempdy int /= stemp_cnt int
+scoreboard players operation stempdz int /= stemp_cnt int
+scoreboard players operation stempx int += stempdx int
+scoreboard players operation stempy int += stempdy int
+scoreboard players operation stempz int += stempdz int
+scoreboard players operation vve_surface_f int /= stemp_cnt int
+scoreboard players operation vve_surface_fr int /= stemp_cnt int
 
 #平面坐标系
 execute positioned 0.0 0.0 0.0 facing entity @s feet run function vve:physx/surface_plane
@@ -42,8 +55,8 @@ execute store result entity @s Pos[2] double 0.0001 run scoreboard players opera
 
 #指向重心投影的平面单位向量
 execute positioned 0.0 0.0 0.0 facing entity @s feet rotated ~ 0.0 run tp @s ^ ^ ^1.0
-execute store result score stempk0 int run data get entity @s Pos[0] 10000
-execute store result score stempk1 int run data get entity @s Pos[2] 10000
+execute store result score sstempk0 int run data get entity @s Pos[0] 10000
+execute store result score sstempk1 int run data get entity @s Pos[2] 10000
 
 #center_dsp
 #execute store result entity @s Pos[0] double 0.0001 run scoreboard players get stempx int

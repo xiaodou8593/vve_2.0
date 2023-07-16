@@ -1,0 +1,8 @@
+#vve_exploder的数据模板
+{
+	time:30,
+	rate:30,
+	distance:4.5d,
+	impulse:1,
+	pos:[0.0d,0.0d,0.0d]
+}

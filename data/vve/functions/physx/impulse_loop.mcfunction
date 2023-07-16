@@ -1,4 +1,5 @@
 #vve:physx/impulse_loop
+#tellraw @a {"nbt":"list_impulse[0]","storage":"math:io"}
 execute store result score @s 3vec_x run data get storage math:io list_impulse[0].fvec[0] 10000
 execute store result score @s 3vec_y run data get storage math:io list_impulse[0].fvec[1] 10000
 execute store result score @s 3vec_z run data get storage math:io list_impulse[0].fvec[2] 10000

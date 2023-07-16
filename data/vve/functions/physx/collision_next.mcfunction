@@ -10,7 +10,9 @@ scoreboard players operation sstempu int += sstemp0 int
 
 scoreboard players operation sstemp0 int = vve_cv int
 scoreboard players operation sstemp0 int -= sstempv int
-scoreboard players operation sstemp0 int *= vve_bounce int
+scoreboard players operation vve_cbounce int += vve_bounce int
+scoreboard players operation vve_cbounce int /= 2 int
+scoreboard players operation sstemp0 int *= vve_cbounce int
 scoreboard players operation sstemp0 int /= 10000 int
 scoreboard players operation sstemp0 int *= vve_cmass int
 scoreboard players operation sstempu int += sstemp0 int

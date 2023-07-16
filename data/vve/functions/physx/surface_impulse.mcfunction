@@ -174,6 +174,30 @@ execute store result storage math:io vve_impulse.fvec[2] double 0.00000001 run s
 data modify storage math:io list_impulse append from storage math:io vve_impulse
 scoreboard players add impulse_cnt int 1
 
+scoreboard players operation 3vec_x int = stempx int
+scoreboard players operation 3vec_y int = stempy int
+scoreboard players operation 3vec_z int = stempz int
+scoreboard players operation @s 3vec_x = fvec_x int
+scoreboard players operation @s 3vec_y = fvec_y int
+scoreboard players operation @s 3vec_z = fvec_z int
+function math:3vec/_cross
+execute store result entity @s Pos[0] double 0.0001 run scoreboard players get 3vec_x int
+execute store result entity @s Pos[1] double 0.0001 run scoreboard players get 3vec_y int
+execute store result entity @s Pos[2] double 0.0001 run scoreboard players get 3vec_z int
+execute positioned 0.0 0.0 0.0 facing entity @s feet run tp @s ^ ^ ^1.0
+execute store result score 3vec_x int run data get entity @s Pos[0] 10000
+execute store result score 3vec_y int run data get entity @s Pos[1] 10000
+execute store result score 3vec_z int run data get entity @s Pos[2] 10000
+scoreboard players operation sstempd int = 3vec_x int
+scoreboard players operation sstempd int *= vve_omegax int
+scoreboard players operation sstemp0 int = 3vec_y int
+scoreboard players operation sstemp0 int *= vve_omegay int
+scoreboard players operation sstempd int += sstemp0 int
+scoreboard players operation sstemp0 int = 3vec_z int
+scoreboard players operation sstemp0 int *= vve_omegaz int
+scoreboard players operation sstempd int += sstemp0 int
+execute if score sstempd int matches ..-1 run function vve:physx/surface_fric
+
 #暂停模拟
 #tellraw @a "ready to surface！"
 #tellraw @a "impulse"

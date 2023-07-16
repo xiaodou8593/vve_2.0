@@ -28,6 +28,7 @@ execute store result score @s vve_bounce run data get storage math:io input.boun
 execute store result score @s vve_g run data get storage math:io input.gravity 100
 
 execute unless data storage math:io input.sub run function vve:set/not_sub
+data modify entity @s Tags append from storage math:io input.tags[]
 
 #sub组件
 data modify storage math:io stemp set from storage math:io input.sub_cubes
@@ -51,7 +52,6 @@ execute unless data storage math:io input.sub if score que_len int matches 1.. r
 
 tag @e remove result
 data modify entity @s Tags append from storage math:class vve_tags.obj[]
-data modify entity @s Tags append from storage math:io input.tags[]
 
 #数据根初始化
 execute if entity @s[tag=free] at @s run function vve:set/init_free

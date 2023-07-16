@@ -8,7 +8,7 @@ execute store result storage math:io rec[0].temp.xyzw[1] float 0.0001 run scoreb
 execute store result storage math:io rec[0].temp.xyzw[2] float 0.0001 run scoreboard players get @s qrot_z
 execute store result storage math:io rec[0].temp.xyzw[3] float 0.0001 run scoreboard players get @s qrot_w
 
-execute store result storage math:io rec[0].temp.rmass int 1 run scoreboard players get @s vve_rmass
+execute store result storage math:io rec[0].temp.rmass double 0.0001 run scoreboard players get @s vve_rmass
 execute store result storage math:io rec[0].temp.mass int 1 run scoreboard players get @s vve_mass
 execute store result storage math:io rec[0].temp.mass_center[0] double 0.0001 run scoreboard players get @s vve_mcu
 execute store result storage math:io rec[0].temp.mass_center[1] double 0.0001 run scoreboard players get @s vve_mcv

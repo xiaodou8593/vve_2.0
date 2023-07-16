@@ -10,4 +10,7 @@ tellraw @a {"score":{"name":"tempc0","objective":"int"}}
 
 tellraw @a [{"text":"xyz:["},{"score":{"name":"@s","objective":"x"}},{"text":","},{"score":{"name":"@s","objective":"y"}},{"text":","},{"score":{"name":"@s","objective":"z"}},{"text":"]"}]
 
+tellraw @a [{"text":"velocity:["},{"score":{"name":"@s","objective":"vve_vx"}},{"text":","},{"score":{"name":"@s","objective":"vve_vy"}},{"text":","},{"score":{"name":"@s","objective":"vve_vz"}},{"text":"]"}]
+tellraw @a [{"text":"omega:["},{"score":{"name":"@s","objective":"vve_omegax"}},{"text":","},{"score":{"name":"@s","objective":"vve_omegay"}},{"text":","},{"score":{"name":"@s","objective":"vve_omegaz"}},{"text":"]"}]
+
 tellraw @a [{"text":"["},{"score":{"name":"sstempx","objective":"int"}},{"text":","},{"score":{"name":"sstempy","objective":"int"}},{"text":","},{"score":{"name":"sstempz","objective":"int"}},{"text":"]"}]
